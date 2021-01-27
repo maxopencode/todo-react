@@ -17,6 +17,8 @@ export default {
 
   create: (title, completed) => instance.post('todos', {title, completed}),
 
+  setCompleted: (id, completed) => instance.patch('todos/' + id, {completed}),
+
   update: (id, title, completed) => instance.put('todos/' + id, {title, completed}),
 
   remove: (id) => instance.delete('todos/' + id)

@@ -61,7 +61,7 @@ function Todo() {
 
   const completeTask = index => {
     const task = tasks[index];
-    void Api.update(task.id, task.title, !task.completed)
+    void Api.setCompleted(task.id, !task.completed)
       .then(response => {
         const newTasks = [...tasks];
         newTasks[index] = response.data;
